@@ -18,14 +18,14 @@ uTOP - API for system for shift planning in multi-shift
 + uniqueEmployeeID (string) - Employee unique ID from external system
 + weekendWork (bit) - Weekend shifts allowed to employee
 + workRestriction (string) - Informative note about employees work restrictions
-+ employment { id: (int), name: (string) }
-+ workTime (int) 
-+ photoUrl (string)
-+ active (bit)
++ employment { id: (int), name: (string) } 
++ workTime (int) - In hours 
++ photoUrl (string) - Employee photo
++ active (bit) 
 + validTo (datetime)
-+ primarySkill { id: (int), name: (string) }
-+ secondarySkill { id: (int), name: (string) }
-+ preferedShifts (array  [{ id: (int), name: (string)] }
++ primarySkill { id: (int), name: (string) } - Employee primary skill from table Skills
++ secondarySkill { id: (int), name: (string) } - Employee secondary skill from table Skills
++ preferedShifts (array  [{ id: (int), name: (string)] } - 
 
 ### List All Users [GET]
 
