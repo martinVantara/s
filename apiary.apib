@@ -287,10 +287,45 @@ View detail about user with id in param
 + country (string) 
 + phoneNumber (string)
 
-
 ### Create Organization unit [PUSH]
 
-+ Response 200 (application/json)
++ Request (application/json)
+        
+            {
+                "name": "Praha",
+                "orgUnitManager": "{ id: 1, name: "Praha" }"
+            }
+
++ Response 201 (application/json) 
+
+    + Headers
+
+        Location: /orgunit/1
+
+    + Body
+        
+        {
+            "orgUnitID": "1", 
+            
+            + name (string) - Org. unit name
++ orgUnitManager ( id: (int), name: (string) )
++ orgUnitManagerDeputy ( id: (int), name: (string) )
++ servicePoints (int) 
++ shiftType ( [{ id: (int), name: (string)}] )
++ SLA (int)
++ waitingTime (int) 
++ avgServiceTime (int) 
++ otherTasks (int) 
++ skills ( [{ id: (int), name: (string)}] )  
++ street (string) 
++ landRegistryNumber (int) - číslo popisné
++ houseNumber (int) - číslo orientační
++ city (string) 
++ country (string) 
++ phoneNumber (string)
+            }
+    
+            
 
 ### Update Organization unit
 
