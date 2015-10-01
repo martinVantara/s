@@ -273,22 +273,19 @@ View detail about user with id in param
 + name (string) - Org. unit name
 + orgUnitManager ( id: (int), name: (string) )
 + orgUnitManagerDeputy ( id: (int), name: (string) )
-+ orgUnit { id: (int), name: (string) } - Org. unit which the employee is assigned to
-+ createdOn (datetime) - date of user creation 
-+ createdBy { id: (int), name: (string) } - 
-+ email (string) - Employee email 
-+ phoneNumber (string) - Employee email 
-+ uniqueEmployeeID (string) - Employee unique ID from external system
-+ weekendWork (bit) - Weekend shifts allowed to employee
-+ workRestriction (string) - Informative note about employees work restrictions
-+ employment { id: (int), name: (string) } 
-+ workTime (int) - In hours 
-+ photoUrl (string) - Employee photo
-+ active (bit) 
-+ validTo (datetime)
-+ primarySkill { id: (int), name: (string) } - Employee primary skill from table Skills
-+ secondarySkill { id: (int), name: (string) } - Employee secondary skill from table Skills
-+ preferedShifts
++ servicePoints (int) 
++ shiftType ( [{ id: (int), name: (string)}] )
++ SLA (int)
++ waitingTime (int) 
++ avgServiceTime (int) 
++ otherTasks (int) 
++ skills ( [{ id: (int), name: (string)}] )  
++ street (string) 
++ landRegistryNumber (int) - číslo popisné
++ houseNumber (int) - číslo orientační
++ city (string) 
++ country (string) 
++ phoneNumber (string)
 
 ### Create Organization unit 
 
