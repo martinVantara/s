@@ -1,0 +1,285 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# UTOP
+
+uTOP - API for system for shift planning in multi-shift 
+
+## Users Collection [/user]
+
++ firstName (string) - Employee name
++ surname (string) - Employee surname
++ role (int) - User role in system
++ orgUnit { id: (int), name: (string) } - Org. unit which the employee is assigned to
++ createdOn (datetime) - date of user creation 
++ createdBy { id: (int), name: (string) } - 
++ email (string) - Employee email 
++ phoneNumber (string) - Employee email 
++ uniqueEmployeeID (string) - Employee unique ID from external system
++ weekendWork (bit) - Weekend shifts allowed to employee
++ workRestriction (string) - 
++ employment { id: (int), name: (string) }
++ workTime (int) 
++ photoUrl (string)
++ active (bit)
++ validTo (datetime)
++ primarySkill { id: (int), name: (string) }
++ secondarySkill { id: (int), name: (string) }
++ preferedShifts (array  [{ id: (int), name: (string)] }
+
+### List All Users [GET]
+
++ Response 200 (application/json) 
+
+            [
+                {
+                "employeeID": "1",
+                "firstName": "Martin",
+                "surname": "Vantara",
+                "roleID": "1",
+                "orgUnitID": "{ id: 1, name: "Praha" }",
+                "createdOn": "2014-11-11T08:40:51.620Z",
+                "createdBy": "{ id: 3, name: "Michal Novák" }",
+                "email": "martin.vantara@principal.cz",
+                "phoneNumber": "+420773214674",
+                "uniqueEmployeeID": "uTOP00001",
+                "weekendWork": "false",
+                "workRestriction": "Nemôže pracovať v noci.",
+                "employment":"{ id: 1, name: "Zaměstnanec" }",
+                "workTime": "40",
+                "photo": "bla",
+                "active": "true",
+                "validTo": "2020-11-11T08:40:51.620Z",
+                "primarySkill": "{ id: 1, name: "Pokladní" }",
+                "secondarySkill": "{ id: 2, name: "Hlavní pokladní" }",
+                "preferedShifts":   [
+                                {
+                                "id" : "1", 
+                                "name" : "Ranní"
+                                }, {
+                                "id" : "2", 
+                                "name" : "Odpolední"
+                                }
+                                    ] 
+                },
+                {
+                "employeeID": "2",
+                "firstName": "Martin",
+                "surname": "May",
+                "roleID": "2",
+                "orgUnitID": "{ id: 1, name: "Praha" }",
+                "createdOn": "2014-11-15T08:40:51.620Z",
+                "createdBy": "{ id: 3, name: "Michal Novák" }",
+                "email": "martin.may@principal.cz",
+                "phoneNumber": "+420773214674",
+                "uniqueEmployeeID": "uTOP00002",
+                "weekendWork": "true",
+                "workRestriction": "Super manažér",
+                "employment":"{ id: 1, name: "Zaměstnanec" }",
+                "workTime": "40",
+                "photo": "bla",
+                "active": "true",
+                "validTo": "2020-11-13T08:40:51.620Z",
+                "primarySkill": "{ id: 1, name: "Pokladní" }",
+                "secondarySkill": "{ id: 2, name: "Hlavní pokladní" }",
+                "preferedShifts":   [
+                                {
+                                "id" : "1", 
+                                "name" : "Ranní"
+                                }, {
+                                "id" : "2", 
+                                "name" : "Noční"
+                                }
+                                    ] 
+                }
+            ]
+            
+### Create User [POST]
+
++ Request (application/json)
+
+            {
+                "firstName": "Martin",
+                "surname": "Vantara",
+                "roleID": "1",
+                "orgUnitID": "1",
+                "createdOn": "2014-11-11T08:40:51.620Z",
+                "createdBy": "1",
+                "email": "martin.vantara@principal.cz",
+                "phoneNumber": "+420773214674",
+                "uniqueEmployeeID": "uTOP00001",
+                "weekendWork": "false",
+                "workRestriction": "Nemôže pracovať v noci.",
+                "employment":"{ id: 1, name: "Zaměstnanec" }",
+                "workTime": "40",
+                "photo": "bla",
+                "active": "true",
+                "validTo": "2020-11-11T08:40:51.620Z",
+                "primarySkill": "{ id: 1, name: "Pokladní" }",
+                "secondarySkill": "{ id: 2, name: "Hlavní pokladní" }",
+                "preferedShifts":   [
+                                {
+                                "id" : "1", 
+                                "name" : "Ranní"
+                                }, {
+                                "id" : "2", 
+                                "name" : "Noční"
+                                }
+                                    ] 
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /user/1
+
+    + Body
+
+            {
+                "employeeID": "1",
+                "firstName": "Martin",
+                "surname": "Vantara",
+                "roleID": "1",
+                "orgUnit": "{ id: 1, name: "Praha" }",
+                "createdOn": "2014-11-11T08:40:51.620Z",
+                "createdBy": "{ id: 3, name: "Michal Novák" }",
+                "email": "martin.vantara@principal.cz",
+                "phoneNumber": "+420773214674",
+                "uniqueEmployeeID": "uTOP00001",
+                "weekendWork": "false",
+                "workRestriction": "Nemôže pracovať v noci.",
+                "employment":"{ id: 1, name: "Zaměstnanec" }",
+                "workTime": "40",
+                "photo": "bla",
+                "active": "true",
+                "validTo": "2020-11-11T08:40:51.620Z",
+                "primarySkill": "{ id: 1, name: "Pokladní" }",
+                "secondarySkill": "{ id: 2, name: "Hlavní pokladní" }",
+                "preferedShifts":   [
+                                {
+                                "id" : "1", 
+                                "name" : "Ranní"
+                                }, {
+                                "id" : "2", 
+                                "name" : "Noční"
+                                }
+                                    ] 
+            }
+            
+### Update User [PUT]
+
++ Request (application/json)
+    
+            {
+                "employeeID": "1"
+                "firstName": "Martin",
+                "surname": "Vantara",
+                "roleID": "1",
+                "orgUnit": "{ id: 1, name: "Praha" }",
+                "createdOn": "2014-11-11T08:40:51.620Z",
+                "createdBy": "{ id: 3, name: "Michal Novák" }",
+                "email": "martin.vantara@principal.cz",
+                "phoneNumber": "+420773214674",
+                "uniqueEmployeeID": "uTOP00001",
+                "weekendWork": "false",
+                "workRestriction": "Nemôže pracovať v noci.",
+                "employment":"{ id: 1, name: "Zaměstnanec" }",
+                "workTime": "40",
+                "photo": "bla",
+                "active": "true",
+                "validTo": "2020-11-11T08:40:51.620Z",
+                "primarySkill": "{ id: 1, name: "Pokladní" }",
+                "secondarySkill": "{ id: 2, name: "Hlavní pokladní" }",
+                "preferedShifts":   [
+                                {
+                                "id" : "1", 
+                                "name" : "Ranní"
+                                }, {
+                                "id" : "2", 
+                                "name" : "Odpolední"
+                                }, {
+                                "id" : "2", 
+                                "name" : "Odpolední"
+                                }
+                                    ] 
+            }
+
++ Response 200 (application/json) 
+            
+
+
+            
+## Login [/user/login?user_login={user_login}&user_password={user_password}]
+
+### Login User [POST]
+
+Login user 
+
++ Parameters
+    + user_login (string) - Login of the User in the form of an string
+    + user_password (string) - Password of the user in the form of an string
+
++ Response 200 (application/json)
+
+        OK
+
+## Logout [/user/logout]
+
+### Logout User [GET]
+
+Logout user
+
++ Response 200 
+
+        OK
+
+## User Collection [/user/{user_id}]
+
+### User Detail [GET]
+
+View detail about user with id in param
+
++ Parameters
+    + user_id (number) - ID of the User in the form of an integer
+    
++ Response 200 (application/json)
+
+            {
+                "employeeID": "1",
+                "firstName": "Martin",
+                "surname": "Vantara",
+                "roleID": "1",
+                "orgUnit": "{ id: 1, name: "Praha" }",
+                "createdOn": "2014-11-11T08:40:51.620Z",
+                "createdBy": "{ id: 3, name: "Michal Novák" }",
+                "email": "martin.vantara@principal.cz",
+                "phoneNumber": "+420773214674",
+                "uniqueEmployeeID": "uTOP00001",
+                "weekendWork": "false",
+                "workRestriction": "Nemôže pracovať v noci.",
+                "employment":"{ id: 1, name: "Zaměstnanec" }",
+                "workTime": "40",
+                "photo": "bla",
+                "active": "true",
+                "validTo": "2020-11-11T08:40:51.620Z"
+            }
+
+
+### Delete User [DELETE]
++ Response 204
+
+## Organzation chart Collection [/orgunit]
+
+### Create Organization unit 
+
+## Organization unit Collection [/orgunit?orgUnit_id={orgUnit_id}]
+
+### Organization unit detail 
+
++ Response 200 (application/json)
+
+### Update Organization unit
+
+### Delete Organization unit
+
