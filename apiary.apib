@@ -754,13 +754,55 @@ View detail about org.unit with id in param
 + Request (application/json) 
 
             {
-                "shifttype" : {
+                "shiftType" : {
                     "name": "15",
                     "length": "15"
                 }
             }
 
 + Response 200 (application/json)
+
+            {
+                "orgUnitID": "1",
+                "name": "Praha",
+                "orgUnitManager": "{ id: 1, name: "Martin Vantara" }",
+                "orgUnitManagerDeputy": "{ id: 2, name: "Martin May" }",
+                "servicePoints": "3",
+                "shiftType": [
+                                {
+                                "id" : "1", 
+                                "name" : "4"
+                                }, {
+                                "id" : "2", 
+                                "name" : "6"
+                                }, {
+                                "id" : "3", 
+                                "name" : "8"
+                                }, {
+                                "id" : "4", 
+                                "name" : "15"
+                                }
+                            ],
+                "SLA": "95",
+                "waitingTime": "300",
+                "avgServiceTime": "240",
+                "otherTasks": "10",
+                "skills": [
+                                {
+                                "id" : "1", 
+                                "name" : "Pokladní"
+                                }, {
+                                "id" : "2", 
+                                "name" : "Hlavní pokladní"
+                                }
+                            ],
+                "street": "Lodžská",
+                "landRegistryNumber": "3",
+                "houseNumber": "923",
+                "city": "Praha",
+                "country": "Česká republika", 
+                "phoneNumber": "+420 774 928 742"
+            }
 
 
 
