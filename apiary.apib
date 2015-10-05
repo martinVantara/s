@@ -169,20 +169,29 @@ uTOP - API for system for shift planning in multi-shift
             }
             
 
-## User - Login [/user/login?user_login={user_login}&user_password={user_password}]
+## User - Login [/user/login]
 
 ### Login User [POST]
 
 Login user 
 
-+ Parameters
-    + user_login (string) - Login of the User in the form of an string
-    + user_password (string) - Password of the user in the form of an string
++ Request (application/json)
+        
+            {
+                "uniqueEmployeeID": "uTOP00001",
+                "password": "supertajneheslo",
+                "ttl": 1209600000
+            }
 
 + Response 200 (application/json)
 
-        OK
-
+            {
+                "id": "PqosmmPCdQgwerDYwQcVCxMakGQV0BSUwG4iGVLvD3XUYZRQky1cmG8ocmzsVpEE",
+                "ttl": 1209600,
+                "created": "2014-12-23T08:31:33.464Z",
+                "userId": 1
+            }
+            
 ## User - Logout [/user/logout]
 
 ### Logout User [GET]
@@ -285,7 +294,7 @@ View detail about user with id in param
             {
             }
 
-## User - ChangePassword [/user/ChangePassword?user_id={user_id}]
+## User - ChangePassword [/user/user_id={user_id}/ChangePassword]
 
 ### ChangePassword [POST]
 
@@ -296,9 +305,21 @@ View detail about user with id in param
 + Request (application/json)
 
             {
+                "password":{
+                "oldPassword":"test@123",
+                "newPassword":"test@321"
+                }
             }
 
 + Response 200 (application/json)
+
+            {
+                "password":{
+                "oldPassword":"test@123",
+                "newPassword":"test@321"
+                }
+            }
+            
 
 ## User - ForgotPassword [/user/ForgotPassword]
 
