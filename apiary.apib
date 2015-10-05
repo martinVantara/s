@@ -168,6 +168,33 @@ uTOP - API for system for shift planning in multi-shift
                                     ] 
             }
             
+
+## Login [/user/login?user_login={user_login}&user_password={user_password}]
+
+### Login User [POST]
+
+Login user 
+
++ Parameters
+    + user_login (string) - Login of the User in the form of an string
+    + user_password (string) - Password of the user in the form of an string
+
++ Response 200 (application/json)
+
+        OK
+
+## Logout [/user/logout]
+
+### Logout User [GET]
+
+Logout user
+
++ Response 200 
+
+        OK
+
+## User Collection [/user/user_id={user_id}]
+
 ### Update User [PUT]
 
 + Request (application/json)
@@ -207,32 +234,6 @@ uTOP - API for system for shift planning in multi-shift
             }
 
 + Response 200 (application/json) 
-            
-## Login [/user/login?user_login={user_login}&user_password={user_password}]
-
-### Login User [POST]
-
-Login user 
-
-+ Parameters
-    + user_login (string) - Login of the User in the form of an string
-    + user_password (string) - Password of the user in the form of an string
-
-+ Response 200 (application/json)
-
-        OK
-
-## Logout [/user/logout]
-
-### Logout User [GET]
-
-Logout user
-
-+ Response 200 
-
-        OK
-
-## User Collection [/user/user_id={user_id}]
 
 ### User Detail [GET]
 
