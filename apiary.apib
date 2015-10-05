@@ -270,7 +270,7 @@ View detail about user with id in param
 
 ## ChangeMyPhoto [/user/user_id={user_id}/ChangeMyPhoto]
 
-### ChangeMyPhoto [PUSH]
+### ChangeMyPhoto [POST]
 
 + Response 200 (application/json)
 
@@ -294,10 +294,10 @@ View detail about user with id in param
 + country (string) 
 + phoneNumber (string)
 
-### Create Organization unit [PUSH]
+### Create Organization unit [POST]
 
 + Request (application/json)
-        
+
             {
                 "name": "Praha",
                 "orgUnitManager": "{ id: 1, name: "Martin Vantara" }",
@@ -340,10 +340,12 @@ View detail about user with id in param
 
     + Headers
 
-        Location: /orgunit/1
+            Location: /orgunit/1
 
     + Body
-                {
+    
+            {
+                
                 "orgUnitID": "1", 
                 "name": "Praha",
                 "orgUnitManager": "{ id: 1, name: "Martin Vantara" }",
