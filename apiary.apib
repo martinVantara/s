@@ -5,6 +5,8 @@ HOST: http://polls.apiblueprint.org/
 
 uTOP - API for system for shift planning in multi-shift 
 
+## Create Many users [/createManyUsers] 
+
 ## Users Collection [/user]
 
 + empolyeeID (int) - Employee ID
@@ -278,7 +280,39 @@ View detail about user with id in param
 + Parameters
     + user_id (number) - ID of the User in the form of an integer
 
-+ Response 204
++ Response 200 (application/json)
+
+            {
+                "employeeID": "1",
+                "firstName": "Martin",
+                "surname": "Vantara",
+                "roleID": "1",
+                "orgUnit": "{ id: 1, name: "Praha" }",
+                "createdOn": "2014-11-11T08:40:51.620Z",
+                "createdBy": "{ id: 3, name: "Michal Novák" }",
+                "email": "martin.vantara@principal.cz",
+                "phoneNumber": "+420773214674",
+                "uniqueEmployeeID": "uTOP00001",
+                "weekendWork": "false",
+                "workRestriction": "Nemôže pracovať v noci.",
+                "employment":"{ id: 1, name: "Zaměstnanec" }",
+                "workTime": "40",
+                "photoUrl": "bla",
+                "active": "false",
+                "validTo": "2020-11-11T08:40:51.620Z",
+                "primarySkill": "{ id: 1, name: "Pokladní" }",
+                "secondarySkill": "{ id: 2, name: "Hlavní pokladní" }",
+                "preferedShifts":   [
+                                {
+                                "id" : "1", 
+                                "name" : "Ranní"
+                                }, {
+                                "id" : "2", 
+                                "name" : "Noční"
+                                }
+                                    ] 
+            }        
+
 
 ## User - ChangeMyPhoto [/user/ChangeMyPhoto?user_id={user_id}]
 
