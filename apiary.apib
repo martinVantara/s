@@ -277,6 +277,8 @@ View detail about user with id in param
 
 ### Delete User [DELETE]
 
+Change User active attribute active to false
+
 + Parameters
 
     + user_id (number) - ID of the User in the form of an integer
@@ -315,7 +317,7 @@ View detail about user with id in param
             }        
 
 
-## User - ChangeMyPhoto [/user/ChangeMyPhoto?user_id={user_id}]
+## User - ChangeMyPhoto [/user/user_id={user_id}/ChangeMyPhoto]
 
 ### ChangeMyPhoto [POST]
 
@@ -360,11 +362,23 @@ View detail about user with id in param
 
 ### ForgotPassword [POST]
 
++ Request (application/json) 
+
+            {
+            "email": "martin.vantara@principal.cz"
+            }
+
 + Response 200 (application/json)
 
 ## User - ForgotID [/user/ForgotID]
 
 ### ForgotID [POST]
+
++ Request (application/json) 
+
+            {
+            "email": "martin.vantara@principal.cz"
+            }
 
 + Response 200 (application/json) 
 
@@ -479,7 +493,6 @@ View detail about user with id in param
                 "phoneNumber": "+420 774 928 742"
             }
 
-
 ## OU - Collection [/orgunit/orgUnitID={orgUnitID}]
 
 + Parameters
@@ -536,6 +549,7 @@ View detail about user with id in param
 View detail about org.unit with id in param
 
 + Parameters
+
     + orgUnitID (number) - ID of the Org.Unit in the form of an integer
     
 + Response 200 (application/json)
@@ -583,7 +597,7 @@ View detail about org.unit with id in param
 
 + Response 200 (application/json)
 
-## OU - ShowAssignableEmployees [/orgunit/ShowAssignableEmployees?orgUnitID={orgUnitID}]
+## OU - ShowAssignableEmployees [/orgunit/orgUnitID={orgUnitID}/ShowAssignableEmployees]
 
 + Parameters
 
@@ -656,7 +670,7 @@ View detail about org.unit with id in param
                 }
             ]
 
-## OU - ShowAssignedEmployees [/orgunit/ShowAssignedEmployees?orgUnitID={orgUnitID}]
+## OU - ShowAssignedEmployees [/orgunit/orgUnitID={orgUnitID}/ShowAssignedEmployees]
 
 + Parameters
 
@@ -740,8 +754,10 @@ View detail about org.unit with id in param
 + Request (application/json) 
 
             {
-                "name": "15",
-                "length": "15"
+                "shifttype" : {
+                    "name": "15",
+                    "length": "15"
+                }
             }
 
 + Response 200 (application/json)
