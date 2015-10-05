@@ -48,7 +48,7 @@ uTOP - API for system for shift planning in multi-shift
                 "workRestriction": "Nemôže pracovať v noci.",
                 "employment":"{ id: 1, name: "Zaměstnanec" }",
                 "workTime": "40",
-                "photo": "bla",
+                "photoUrl": "bla",
                 "active": "true",
                 "validTo": "2020-11-11T08:40:51.620Z",
                 "primarySkill": "{ id: 1, name: "Pokladní" }",
@@ -78,7 +78,7 @@ uTOP - API for system for shift planning in multi-shift
                 "workRestriction": "Super manažér",
                 "employment":"{ id: 1, name: "Zaměstnanec" }",
                 "workTime": "40",
-                "photo": "bla",
+                "photoUrl": "bla",
                 "active": "true",
                 "validTo": "2020-11-13T08:40:51.620Z",
                 "primarySkill": "{ id: 1, name: "Pokladní" }",
@@ -113,7 +113,7 @@ uTOP - API for system for shift planning in multi-shift
                 "workRestriction": "Nemôže pracovať v noci.",
                 "employment":"{ id: 1, name: "Zaměstnanec" }",
                 "workTime": "40",
-                "photo": "bla",
+                "photoUrl": "bla",
                 "active": "true",
                 "validTo": "2020-11-11T08:40:51.620Z",
                 "primarySkill": "{ id: 1, name: "Pokladní" }",
@@ -152,7 +152,7 @@ uTOP - API for system for shift planning in multi-shift
                 "workRestriction": "Nemôže pracovať v noci.",
                 "employment":"{ id: 1, name: "Zaměstnanec" }",
                 "workTime": "40",
-                "photo": "bla",
+                "photoUrl": "bla",
                 "active": "true",
                 "validTo": "2020-11-11T08:40:51.620Z",
                 "primarySkill": "{ id: 1, name: "Pokladní" }",
@@ -214,7 +214,7 @@ Logout user
                 "workRestriction": "Nemôže pracovať v noci.",
                 "employment":"{ id: 1, name: "Zaměstnanec" }",
                 "workTime": "40",
-                "photo": "bla",
+                "photoUrl": "bla",
                 "active": "true",
                 "validTo": "2020-11-11T08:40:51.620Z",
                 "primarySkill": "{ id: 1, name: "Pokladní" }",
@@ -259,7 +259,7 @@ View detail about user with id in param
                 "workRestriction": "Nemôže pracovať v noci.",
                 "employment":"{ id: 1, name: "Zaměstnanec" }",
                 "workTime": "40",
-                "photo": "bla",
+                "photoUrl": "bla",
                 "active": "true",
                 "validTo": "2020-11-11T08:40:51.620Z"
             }
@@ -275,7 +275,15 @@ View detail about user with id in param
 
 ### ChangeMyPhoto [POST]
 
-+ Response 200 (application/json)
++ Request (application/json)
+
+            { 
+            }
+
++ Response 201 (application/json)
+
+            {
+            }
 
 ## User - ChangePassword [/user/ChangePassword?user_id={user_id}]
 
