@@ -5,7 +5,75 @@ HOST: http://polls.apiblueprint.org/
 
 uTOP - API for system for shift planning in multi-shift 
 
-## Create Many users [/createManyUsers] 
+## Multiple users [/MultippleUsers] 
+
+### Create multiple users
+
++ Request (application/json)
+
+            [   
+                {
+                "firstName": "Martin",
+                "surname": "Vantara",
+                "roleID": "1",
+                "orgUnitID": "1",
+                "createdOn": "2014-11-11T08:40:51.620Z",
+                "createdBy": "1",
+                "email": "martin.vantara@principal.cz",
+                "phoneNumber": "+420773214674",
+                "uniqueEmployeeID": "uTOP00001",
+                "weekendWork": "false",
+                "workRestriction": "Nemôže pracovať v noci.",
+                "employment":"{ id: 1, name: "Zaměstnanec" }",
+                "workTime": "40",
+                "photoUrl": "bla",
+                "active": "true",
+                "validTo": "2020-11-11T08:40:51.620Z",
+                "primarySkill": "{ id: 1, name: "Pokladní" }",
+                "secondarySkill": "{ id: 2, name: "Hlavní pokladní" }",
+                "preferedShifts":   [
+                                {
+                                "id" : "1", 
+                                "name" : "Ranní"
+                                }, {
+                                "id" : "2", 
+                                "name" : "Noční"
+                                }
+                                    ] 
+                },
+                {
+                "firstName": "Martin",
+                "surname": "May",
+                "roleID": "2",
+                "orgUnitID": "{ id: 1, name: "Praha" }",
+                "createdOn": "2014-11-15T08:40:51.620Z",
+                "createdBy": "{ id: 3, name: "Michal Novák" }",
+                "email": "martin.may@principal.cz",
+                "phoneNumber": "+420773214674",
+                "uniqueEmployeeID": "uTOP00002",
+                "weekendWork": "true",
+                "workRestriction": "Super manažér",
+                "employment":"{ id: 1, name: "Zaměstnanec" }",
+                "workTime": "40",
+                "photoUrl": "bla",
+                "active": "true",
+                "validTo": "2020-11-13T08:40:51.620Z",
+                "primarySkill": "{ id: 1, name: "Pokladní" }",
+                "secondarySkill": "{ id: 2, name: "Hlavní pokladní" }",
+                "preferedShifts":   [
+                                {
+                                "id" : "1", 
+                                "name" : "Ranní"
+                                }, {
+                                "id" : "2", 
+                                "name" : "Noční"
+                                }
+                                    ] 
+                }
+            ]
+            
++ Response 200 (application/json)
+
 
 ## Users Collection [/user]
 
@@ -96,6 +164,7 @@ uTOP - API for system for shift planning in multi-shift
                                     ] 
                 }
             ]
+
             
 ### Create User [POST]
 
