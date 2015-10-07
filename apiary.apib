@@ -164,7 +164,6 @@ uTOP - API for system for shift planning in multi-shift
                 }
             ]
 
-            
 ### Create User [POST]
 
 + Request (application/json)
@@ -426,7 +425,6 @@ Change User active attribute active to false
                 }
             }
             
-
 ## User - ForgotPassword [/user/forgotPassword]
 
 ### ForgotPassword [POST]
@@ -454,6 +452,7 @@ Change User active attribute active to false
 ## Organzation chart Collection [/orgunit]
 
 + orgUnitID (int) - Org. unit ID
++ active (bit) - Org. unit is active/deleted
 + name (string) - Org. unit name
 + orgUnitManager ( id: (int), name: (string) )
 + orgUnitManagerDeputy ( id: (int), name: (string) )
@@ -477,6 +476,7 @@ Change User active attribute active to false
 
             {
                 "name": "Praha",
+                "active": "true", 
                 "orgUnitManager": "{ id: 1, name: "Martin Vantara" }",
                 "orgUnitManagerDeputy": "{ id: 2, name: "Martin May" }",
                 "servicePoints": "3",
@@ -573,6 +573,7 @@ Change User active attribute active to false
 
             {
                 "orgUnitID": "1",
+                "active": "true",
                 "name": "Praha",
                 "orgUnitManager": "{ id: 1, name: "Martin Vantara" }",
                 "orgUnitManagerDeputy": "{ id: 2, name: "Martin May" }",
@@ -624,6 +625,7 @@ View detail about org.unit with id in param
 
             {
                 "orgUnitID": "1",
+                "active": "true",
                 "name": "Praha",
                 "orgUnitManager": "{ id: 1, name: "Martin Vantara" }",
                 "orgUnitManagerDeputy": "{ id: 2, name: "Martin May" }",
@@ -664,6 +666,46 @@ View detail about org.unit with id in param
 ### Organization unit delete [DELETE]
 
 + Response 200 (application/json)
+
+            {
+                "orgUnitID": "1",
+                "active": "false",
+                "name": "Praha",
+                "orgUnitManager": "{ id: 1, name: "Martin Vantara" }",
+                "orgUnitManagerDeputy": "{ id: 2, name: "Martin May" }",
+                "servicePoints": "3",
+                "shiftType": [
+                                {
+                                "id" : "1", 
+                                "name" : "4"
+                                }, {
+                                "id" : "2", 
+                                "name" : "6"
+                                }, {
+                                "id" : "3", 
+                                "name" : "8"
+                                }
+                            ],
+                "SLA": "95",
+                "waitingTime": "300",
+                "avgServiceTime": "240",
+                "otherTasks": "10",
+                "skills": [
+                                {
+                                "id" : "1", 
+                                "name" : "Pokladní"
+                                }, {
+                                "id" : "2", 
+                                "name" : "Hlavní pokladní"
+                                }
+                            ],
+                "street": "Lodžská",
+                "landRegistryNumber": "3",
+                "houseNumber": "923",
+                "city": "Praha",
+                "country": "Česká republika", 
+                "phoneNumber": "+420 774 928 742"
+            }
 
 ## OU - AssignableEmployees [/orgunit/orgUnitID={orgUnitID}/assignableEmployees]
 
@@ -894,7 +936,6 @@ View detail about org.unit with id in param
                     "active": "false"
                 }
             }
-
 
 ## OU - OrgUnitShiftType [/orgunit/orgUnit_id={orgUnit_id}/orgUnitShiftType/orgUnitShiftType_id={orgUnitShiftType_id}]
 
