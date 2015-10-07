@@ -5,7 +5,7 @@ HOST: http://polls.apiblueprint.org/
 
 uTOP - API for system for shift planning in multi-shift 
 
-## Multiple users [/MultipleUsers] 
+## Multiple users [/multipleUsers] 
 
 ### Create multiple users
 
@@ -386,7 +386,7 @@ Change User active attribute active to false
                                     ] 
             }        
 
-## User - ChangeMyPhoto [/user/user_id={user_id}/ChangeMyPhoto]
+## User - ChangeMyPhoto [/user/user_id={user_id}/changeMyPhoto]
 
 ### ChangeMyPhoto [POST]
 
@@ -400,7 +400,7 @@ Change User active attribute active to false
             {
             }
 
-## User - ChangePassword [/user/user_id={user_id}/ChangePassword]
+## User - ChangePassword [/user/user_id={user_id}/changePassword]
 
 ### ChangePassword [POST]
 
@@ -427,7 +427,7 @@ Change User active attribute active to false
             }
             
 
-## User - ForgotPassword [/user/ForgotPassword]
+## User - ForgotPassword [/user/forgotPassword]
 
 ### ForgotPassword [POST]
 
@@ -439,7 +439,7 @@ Change User active attribute active to false
 
 + Response 200 (application/json)
 
-## User - ForgotID [/user/ForgotID]
+## User - ForgotID [/user/forgotID]
 
 ### ForgotID [POST]
 
@@ -665,7 +665,7 @@ View detail about org.unit with id in param
 
 + Response 200 (application/json)
 
-## OU - AssignableEmployees [/orgunit/orgUnitID={orgUnitID}/AssignableEmployees]
+## OU - AssignableEmployees [/orgunit/orgUnitID={orgUnitID}/assignableEmployees]
 
 + Parameters
 
@@ -738,7 +738,7 @@ View detail about org.unit with id in param
                 }
             ]
 
-## OU - AssignedEmployees [/orgunit/orgUnitID={orgUnitID}/AssignedEmployees]
+## OU - AssignedEmployees [/orgunit/orgUnitID={orgUnitID}/assignedEmployees]
 
 + Parameters
 
@@ -811,13 +811,13 @@ View detail about org.unit with id in param
                 }
             ]
 
-## OU - OrgUnitShiftType [/orgunit/orgUnitID={orgUnitID}/OrgUnitShiftType]
+## OU - OrgUnitShiftTypes [/orgunit/orgUnitID={orgUnitID}/orgUnitShiftType]
 
 + Parameters
 
     + orgUnitID (int) - Org.unit ID in the form of integer
 
-### OrgUnitShiftType [POST]
+### OrgUnitShiftType Create [POST]
 
 + Request (application/json) 
 
@@ -871,6 +871,13 @@ View detail about org.unit with id in param
                 "country": "Česká republika", 
                 "phoneNumber": "+420 774 928 742"
             }
+
+## OU - OrgUnitShiftType [/orgunit/orgUnit_id={orgUnit_id}/orgUnitShift
+
+### OrgUnitShiftType Delete [DELETE]
+
+
+
 
 
 
