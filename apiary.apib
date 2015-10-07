@@ -95,9 +95,32 @@ uTOP - API for system for shift planning in multi-shift
 + validTo (datetime)
 + primarySkill { id: (int), name: (string) } - Employee primary skill from table Skills
 + secondarySkill { id: (int), name: (string) } - Employee secondary skill from table Skills
-+ preferedShifts (array  [{ id: (int), name: (string)] } - 
++ preferedShifts (array  [{ id: (int), name: (string)] } 
 
 ### List All Users [GET]
+
++ Attributes 
+
+    + empolyeeID (number) - Employee ID
+    + firstName (string) - Employee name
+    + surname (string) - Employee surname
+    + role (number) - User role in system
+    + orgUnit (array [number, string]) - Org. unit which the employee is assigned to
+    + createdOn (string) - date of user creation 
+    + createdBy (array [number, string]) - ID and name of User
+    + email (string) - Employee email 
+    + phoneNumber (string) - Employee email 
+    + uniqueEmployeeID (string) - Employee unique ID from external system
+    + weekendWork (number) - Weekend shifts allowed to employee
+    + workRestriction (string) - Informative note about employees work restrictions
+    + employment (array [number, string]) 
+    + workTime (number) - In hours 
+    + photoUrl (string) - Employee photo
+    + active (number) 
+    + validTo (string)
+    + primarySkill (array [number, string]) - Employee primary skill from table Skills
+    + secondarySkill (array [number, string]) - Employee secondary skill from table Skills
+    + preferedShifts (array  [number,string]) 
 
 + Response 200 (application/json) 
 
