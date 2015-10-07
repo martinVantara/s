@@ -824,7 +824,8 @@ View detail about org.unit with id in param
             {
                 "shiftType" : {
                     "name": "15",
-                    "length": "15"
+                    "length": "15",
+                    "active": "true"
                 }
             }
 
@@ -872,9 +873,25 @@ View detail about org.unit with id in param
                 "phoneNumber": "+420 774 928 742"
             }
 
-## OU - OrgUnitShiftType [/orgunit/orgUnit_id={orgUnit_id}/orgUnitShift
+## OU - OrgUnitShiftType [/orgunit/orgUnit_id={orgUnit_id}/orgUnitShiftType/orgUnitShiftType_id={orgUnitShiftType_id}]
 
 ### OrgUnitShiftType Delete [DELETE]
+
+Change orgUnitShiftType active attribute to false
+
++ Parameters
+
+    + orgUnitShiftType_id (number) - ID of the orgUnitShiftType in the form of an integer
+
++ Response 200 (application/json)
+
+            {
+                "shiftType" : {
+                    "name": "15",
+                    "length": "15",
+                    "active": "true"
+                }
+            }
 
 
 
