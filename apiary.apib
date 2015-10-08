@@ -1064,7 +1064,10 @@ View detail about org.unit with id in param
 
 + Attributes 
 
-    + id 
+    + id (number) - 
+    + name (string) - 
+    + length (number) - length of shift in hours 
+    + active (number) - shift type is active true/ false
 
 + Parameters
 
@@ -1126,20 +1129,34 @@ View detail about org.unit with id in param
             
 ### OrgUnitShiftType All [GET]
 
++ Attributes 
+
+    + id (number) - 
+    + name (string) - 
+    + length (number) - length of shift in hours 
+    + active (number) - shift type is active true/ false
+
++ Parameters
+
+    + orgUnitID (int) - Org.unit ID in the form of integer
+
 + Response 200 (application/json)
 
             {
                 "shiftType" : {
+                    "id": "1",
                     "name": "15",
                     "length": "15",
                     "active": "true"
                 },
                 "shiftType" : {
+                    "id": "2",
                     "name": "6",
                     "length": "6",
                     "active": "true"
                 },
                 "shiftType" : {
+                    "id": "2",
                     "name": "8",
                     "length": "8",
                     "active": "false"
@@ -1154,12 +1171,14 @@ Change orgUnitShiftType active attribute to false
 
 + Parameters
 
+    + orgUnit_id (int) - org.unit ID in the form of integer    
     + orgUnitShiftType_id (number) - ID of the orgUnitShiftType in the form of an integer
 
 + Response 200 (application/json)
 
             {
                 "shiftType" : {
+                    "id": "1"
                     "name": "15",
                     "length": "15",
                     "active": "false"
