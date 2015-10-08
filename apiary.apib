@@ -817,11 +817,11 @@ View detail about org.unit with id in param
 + Response 200 (application/json)
 
             {
-                "orgUnitID": "1",
+                "orgUnitID": "1", 
                 "active": "false",
                 "name": "Praha",
-                "orgUnitManager": "{ id: 1, name: "Martin Vantara" }",
-                "orgUnitManagerDeputy": "{ id: 2, name: "Martin May" }",
+                "orgUnitManager": { "id" : 1, "name" : "Martin Vantara" },
+                "orgUnitManagerDeputy": { "id" : 2, "name" : "Martin May" },
                 "servicePoints": "3",
                 "shiftType": [
                                 {
