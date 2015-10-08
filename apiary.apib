@@ -526,6 +526,10 @@ Change User active attribute active to false
 
 ### ForgotPassword [POST]
 
++ Attributes
+
+    + email (string) - email adress of user
+
 + Request (application/json) 
 
             {
@@ -538,6 +542,10 @@ Change User active attribute active to false
 
 ### ForgotID [POST]
 
++ Attributes
+
+    + email (string) - email adress of user
+
 + Request (application/json) 
 
             {
@@ -548,27 +556,29 @@ Change User active attribute active to false
 
 ## Organzation chart Collection [/orgunit]
 
-+ orgUnitID (int) - Org. unit ID
-+ active (bit) - Org. unit is active/deleted
-+ name (string) - Org. unit name
-+ orgUnitManager ( id: (int), name: (string) )
-+ orgUnitManagerDeputy ( id: (int), name: (string) )
-+ servicePoints (int) 
-+ shiftType ( [{ id: (int), name: (string)}] )
-+ SLA (int)
-+ waitingTime (int) 
-+ avgServiceTime (int) 
-+ otherTasks (int) 
-+ skills ( [{ id: (int), name: (string)}] )  
-+ street (string) 
-+ landRegistryNumber (int) - číslo popisné
-+ houseNumber (int) - číslo orientační
-+ city (string) 
-+ country (string) 
-+ phoneNumber (string)
-
 ### Create Organization unit [POST]
 
++ Attributes 
+
+    + orgUnitID (number) - org. unit ID
+    + active (number) - org. unit is active/deleted
+    + name (string) - org. unit name
+    + orgUnitManager ( array [number, string] ) 
+    + orgUnitManagerDeputy ( array [number, string] )
+    + servicePoints (number) 
+    + shiftType ( array [number, string] )
+    + SLA (number) - Service-level agreement in %
+    + waitingTime (number) - waiting time in seconds 
+    + avgServiceTime (number) - waiting time in seconds
+    + otherTasks (number) - value in %
+    + skills ( array [number, string] ) - skills required in org. unit 
+    + street (string) 
+    + landRegistryNumber (number) - číslo popisné
+    + houseNumber (number) - číslo orientační
+    + city (string)  
+    + country (string) 
+    + phoneNumber (string)
+    
 + Request (application/json)
 
             {
@@ -660,11 +670,34 @@ Change User active attribute active to false
 
 ## OU - Collection [/orgunit/orgUnitID={orgUnitID}]
 
+
+
+### Organization unit update [PUT]
+
++ Attributes 
+
+    + orgUnitID (number) - org. unit ID
+    + active (number) - org. unit is active/deleted
+    + name (string) - org. unit name
+    + orgUnitManager ( array [number, string] ) 
+    + orgUnitManagerDeputy ( array [number, string] )
+    + servicePoints (number) 
+    + shiftType ( array [number, string] )
+    + SLA (number) - Service-level agreement in %
+    + waitingTime (number) - waiting time in seconds 
+    + avgServiceTime (number) - waiting time in seconds
+    + otherTasks (number) - value in %
+    + skills ( array [number, string] ) - skills required in org. unit 
+    + street (string) 
+    + landRegistryNumber (number) - číslo popisné
+    + houseNumber (number) - číslo orientační
+    + city (string)  
+    + country (string) 
+    + phoneNumber (string)
+
 + Parameters
 
     + orgUnitID (int) - Org.unit ID in the form of integer
-
-### Organization unit update [PUT]
 
 + Request (application/json)
 
@@ -714,9 +747,30 @@ Change User active attribute active to false
 
 View detail about org.unit with id in param
 
++ Attributes 
+
+    + orgUnitID (number) - org. unit ID
+    + active (number) - org. unit is active/deleted
+    + name (string) - org. unit name
+    + orgUnitManager ( array [number, string] ) 
+    + orgUnitManagerDeputy ( array [number, string] )
+    + servicePoints (number) 
+    + shiftType ( array [number, string] )
+    + SLA (number) - Service-level agreement in %
+    + waitingTime (number) - waiting time in seconds 
+    + avgServiceTime (number) - waiting time in seconds
+    + otherTasks (number) - value in %
+    + skills ( array [number, string] ) - skills required in org. unit 
+    + street (string) 
+    + landRegistryNumber (number) - číslo popisné
+    + houseNumber (number) - číslo orientační
+    + city (string)  
+    + country (string) 
+    + phoneNumber (string)
+
 + Parameters
 
-    + orgUnitID (number) - ID of the Org.Unit in the form of an integer
+    + orgUnitID (int) - Org.unit ID in the form of integer
     
 + Response 200 (application/json)
 
