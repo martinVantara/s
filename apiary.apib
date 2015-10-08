@@ -625,7 +625,6 @@ Change User active attribute active to false
     + Body
     
             {
-                
                 "orgUnitID": "1", 
                 "active": "true",
                 "name": "Praha",
@@ -667,8 +666,6 @@ Change User active attribute active to false
 
 ## OU - Collection [/orgunit/orgUnitID={orgUnitID}]
 
-
-
 ### Organization unit update [PUT]
 
 + Attributes 
@@ -699,11 +696,11 @@ Change User active attribute active to false
 + Request (application/json)
 
             {
-                "orgUnitID": "1",
+                 "orgUnitID": "1", 
                 "active": "true",
                 "name": "Praha",
-                "orgUnitManager": "{ id: 1, name: "Martin Vantara" }",
-                "orgUnitManagerDeputy": "{ id: 2, name: "Martin May" }",
+                "orgUnitManager": { "id" : 1, "name" : "Martin Vantara" },
+                "orgUnitManagerDeputy": { "id" : 2, "name" : "Martin May" },
                 "servicePoints": "3",
                 "shiftType": [
                                 {
@@ -772,11 +769,11 @@ View detail about org.unit with id in param
 + Response 200 (application/json)
 
             {
-                "orgUnitID": "1",
+                 "orgUnitID": "1", 
                 "active": "true",
                 "name": "Praha",
-                "orgUnitManager": "{ id: 1, name: "Martin Vantara" }",
-                "orgUnitManagerDeputy": "{ id: 2, name: "Martin May" }",
+                "orgUnitManager": { "id" : 1, "name" : "Martin Vantara" },
+                "orgUnitManagerDeputy": { "id" : 2, "name" : "Martin May" },
                 "servicePoints": "3",
                 "shiftType": [
                                 {
