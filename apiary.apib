@@ -299,6 +299,29 @@ Logout user
 
 ### Update User [PUT]
 
++ Attributes 
+
+    + empolyeeID (number) - employee ID
+    + firstName (string) - employee name
+    + surname (string) - employee surname
+    + role (number) - User role in system
+    + orgUnit (array [number, string]) - org. unit which the employee is assigned to
+    + createdOn (string) - date of user creation 
+    + createdBy (array [number, string]) - ID and name of user, who created this employee 
+    + email (string) - employee email 
+    + phoneNumber (string) - employee phone number 
+    + uniqueEmployeeID (string) - employee unique ID from external system
+    + weekendWork (number) - weekend shifts allowed to employee
+    + workRestriction (string) - informative note about employees work restrictions
+    + employment (array [number, string]) - value from enum employment
+    + workTime (number) - work time in hours per week
+    + photoUrl (string) - employee photo
+    + active (number) - value true/ false
+    + validTo (string) - 
+    + primarySkill (array [number, string]) - employee primary skill from table Skills
+    + secondarySkill (array [number, string]) - employee secondary skill from table Skills
+    + preferedShifts (array  [number,string]) - employee prefered shifts from table EmployeePreferedShifts
+
 + Parameters
     + user_id (number) - ID of the User in the form of an integer
 
@@ -344,13 +367,37 @@ Logout user
 
 View detail about user with id in param
 
++ Attributes 
+
+    + empolyeeID (number) - employee ID
+    + firstName (string) - employee name
+    + surname (string) - employee surname
+    + role (number) - User role in system
+    + orgUnit (array [number, string]) - org. unit which the employee is assigned to
+    + createdOn (string) - date of user creation 
+    + createdBy (array [number, string]) - ID and name of user, who created this employee 
+    + email (string) - employee email 
+    + phoneNumber (string) - employee phone number 
+    + uniqueEmployeeID (string) - employee unique ID from external system
+    + weekendWork (number) - weekend shifts allowed to employee
+    + workRestriction (string) - informative note about employees work restrictions
+    + employment (array [number, string]) - value from enum employment
+    + workTime (number) - work time in hours per week
+    + photoUrl (string) - employee photo
+    + active (number) - value true/ false
+    + validTo (string) - 
+    + primarySkill (array [number, string]) - employee primary skill from table Skills
+    + secondarySkill (array [number, string]) - employee secondary skill from table Skills
+    + preferedShifts (array  [number,string]) - employee prefered shifts from table EmployeePreferedShifts
+
 + Parameters
+
     + user_id (number) - ID of the User in the form of an integer
     
 + Response 200 (application/json)
 
             {
-                "employeeID": "1",
+                "employeeID": "1"
                 "firstName": "Martin",
                 "surname": "Vantara",
                 "roleID": "1",
@@ -366,7 +413,21 @@ View detail about user with id in param
                 "workTime": "40",
                 "photoUrl": "bla",
                 "active": "true",
-                "validTo": "2020-11-11T08:40:51.620Z"
+                "validTo": "2020-11-11T08:40:51.620Z",
+                "primarySkill": "{ id: 1, name: "Pokladní" }",
+                "secondarySkill": "{ id: 2, name: "Hlavní pokladní" }",
+                "preferedShifts":   [
+                                {
+                                "id" : "1", 
+                                "name" : "Ranní"
+                                }, {
+                                "id" : "2", 
+                                "name" : "Odpolední"
+                                }, {
+                                "id" : "2", 
+                                "name" : "Odpolední"
+                                }
+                                    ] 
             }
 
 ### Delete User [DELETE]
