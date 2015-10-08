@@ -402,25 +402,25 @@ View detail about user with id in param
 + Response 200 (application/json)
 
             {
-                "employeeID": "1"
+                "employeeID": "1",
                 "firstName": "Martin",
                 "surname": "Vantara",
                 "roleID": "1",
-                "orgUnit": "{ id: 1, name: "Praha" }",
+                "orgUnitID": { "id": 1, "name": "Praha" },
                 "createdOn": "2014-11-11T08:40:51.620Z",
-                "createdBy": "{ id: 3, name: "Michal Novák" }",
+                "createdBy": { "id": 3, "name": "Michal Novák" },
                 "email": "martin.vantara@principal.cz",
                 "phoneNumber": "+420773214674",
                 "uniqueEmployeeID": "uTOP00001",
                 "weekendWork": "false",
                 "workRestriction": "Nemôže pracovať v noci.",
-                "employment":"{ id: 1, name: "Zaměstnanec" }",
+                "employment": { "id": 1, "name": "Zaměstnanec" },
                 "workTime": "40",
                 "photoUrl": "bla",
                 "active": "true",
                 "validTo": "2020-11-11T08:40:51.620Z",
-                "primarySkill": "{ id: 1, name: "Pokladní" }",
-                "secondarySkill": "{ id: 2, name: "Hlavní pokladní" }",
+                "primarySkill": { "id": 1, "name": "Pokladní" },
+                "secondarySkill": { "id": 2, "name": "Hlavní pokladní" },
                 "preferedShifts":   [
                                 {
                                 "id" : "1", 
@@ -428,11 +428,8 @@ View detail about user with id in param
                                 }, {
                                 "id" : "2", 
                                 "name" : "Odpolední"
-                                }, {
-                                "id" : "2", 
-                                "name" : "Odpolední"
                                 }
-                                    ] 
+                                    ]
             }
 
 ### Delete User [DELETE]
@@ -450,30 +447,30 @@ Change User active attribute active to false
                 "firstName": "Martin",
                 "surname": "Vantara",
                 "roleID": "1",
-                "orgUnit": "{ id: 1, name: "Praha" }",
+                "orgUnitID": { "id": 1, "name": "Praha" },
                 "createdOn": "2014-11-11T08:40:51.620Z",
-                "createdBy": "{ id: 3, name: "Michal Novák" }",
+                "createdBy": { "id": 3, "name": "Michal Novák" },
                 "email": "martin.vantara@principal.cz",
                 "phoneNumber": "+420773214674",
                 "uniqueEmployeeID": "uTOP00001",
                 "weekendWork": "false",
                 "workRestriction": "Nemôže pracovať v noci.",
-                "employment":"{ id: 1, name: "Zaměstnanec" }",
+                "employment": { "id": 1, "name": "Zaměstnanec" },
                 "workTime": "40",
                 "photoUrl": "bla",
                 "active": "false",
                 "validTo": "2020-11-11T08:40:51.620Z",
-                "primarySkill": "{ id: 1, name: "Pokladní" }",
-                "secondarySkill": "{ id: 2, name: "Hlavní pokladní" }",
+                "primarySkill": { "id": 1, "name": "Pokladní" },
+                "secondarySkill": { "id": 2, "name": "Hlavní pokladní" },
                 "preferedShifts":   [
                                 {
                                 "id" : "1", 
                                 "name" : "Ranní"
                                 }, {
                                 "id" : "2", 
-                                "name" : "Noční"
+                                "name" : "Odpolední"
                                 }
-                                    ] 
+                                    ]
             }        
 
 ## User - ChangeMyPhoto [/user/user_id={user_id}/changeMyPhoto]
@@ -580,11 +577,11 @@ Change User active attribute active to false
     
 + Request (application/json)
 
-            {
+             {
+                "active": "true",
                 "name": "Praha",
-                "active": "true", 
-                "orgUnitManager": "{ id: 1, name: "Martin Vantara" }",
-                "orgUnitManagerDeputy": "{ id: 2, name: "Martin May" }",
+                "orgUnitManager": { "id" : 1, "name" : "Martin Vantara" },
+                "orgUnitManagerDeputy": { "id" : 2, "name" : "Martin May" },
                 "servicePoints": "3",
                 "shiftType": [
                                 {
