@@ -168,6 +168,29 @@ uTOP - API for system for shift planning in multi-shift
 
 ### Create User [POST]
 
++ Attributes 
+
+    + empolyeeID (number) - employee ID
+    + firstName (string) - employee name
+    + surname (string) - employee surname
+    + role (number) - User role in system
+    + orgUnit (array [number, string]) - org. unit which the employee is assigned to
+    + createdOn (string) - date of user creation 
+    + createdBy (array [number, string]) - ID and name of user, who created this employee 
+    + email (string) - employee email 
+    + phoneNumber (string) - employee phone number 
+    + uniqueEmployeeID (string) - employee unique ID from external system
+    + weekendWork (number) - weekend shifts allowed to employee
+    + workRestriction (string) - informative note about employees work restrictions
+    + employment (array [number, string]) - value from enum employment
+    + workTime (number) - work time in hours per week
+    + photoUrl (string) - employee photo
+    + active (number) - value true/ false
+    + validTo (string) - 
+    + primarySkill (array [number, string]) - employee primary skill from table Skills
+    + secondarySkill (array [number, string]) - employee secondary skill from table Skills
+    + preferedShifts (array  [number,string]) - employee prefered shifts from table EmployeePreferedShifts
+
 + Request (application/json)
 
             {
