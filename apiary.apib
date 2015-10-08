@@ -816,6 +816,10 @@ View detail about org.unit with id in param
 
 ### Organization unit delete [DELETE]
 
++ Parameters
+
+    + orgUnitID (int) - Org.unit ID in the form of integer
+
 + Response 200 (application/json)
 
             {
@@ -865,6 +869,33 @@ View detail about org.unit with id in param
     + orgUnitID (int) - Org.unit ID in the form of integer
 
 ### AssignableEmployees [GET]
+
++ Attributes 
+
+    + empolyeeID (number) - employee ID
+    + firstName (string) - employee name
+    + surname (string) - employee surname
+    + role (number) - User role in system
+    + orgUnit (array [number, string]) - org. unit which the employee is assigned to
+    + createdOn (string) - date of user creation 
+    + createdBy (array [number, string]) - ID and name of user, who created this employee 
+    + email (string) - employee email 
+    + phoneNumber (string) - employee phone number 
+    + uniqueEmployeeID (string) - employee unique ID from external system
+    + weekendWork (number) - weekend shifts allowed to employee
+    + workRestriction (string) - informative note about employees work restrictions
+    + employment (array [number, string]) - value from enum employment
+    + workTime (number) - work time in hours per week
+    + photoUrl (string) - employee photo
+    + active (number) - value true/ false
+    + validTo (string) - 
+    + primarySkill (array [number, string]) - employee primary skill from table Skills
+    + secondarySkill (array [number, string]) - employee secondary skill from table Skills
+    + preferedShifts (array  [number,string]) - employee prefered shifts from table EmployeePreferedShifts
+
++ Parameters
+
+    + orgUnitID (int) - Org.unit ID in the form of integer
 
 + Response 200 (application/json)
 
@@ -933,11 +964,34 @@ View detail about org.unit with id in param
 
 ## OU - AssignedEmployees [/orgunit/orgUnitID={orgUnitID}/assignedEmployees]
 
+### AssignedEmployees [GET]
+
++ Attributes 
+
+    + empolyeeID (number) - employee ID
+    + firstName (string) - employee name
+    + surname (string) - employee surname
+    + role (number) - User role in system
+    + orgUnit (array [number, string]) - org. unit which the employee is assigned to
+    + createdOn (string) - date of user creation 
+    + createdBy (array [number, string]) - ID and name of user, who created this employee 
+    + email (string) - employee email 
+    + phoneNumber (string) - employee phone number 
+    + uniqueEmployeeID (string) - employee unique ID from external system
+    + weekendWork (number) - weekend shifts allowed to employee
+    + workRestriction (string) - informative note about employees work restrictions
+    + employment (array [number, string]) - value from enum employment
+    + workTime (number) - work time in hours per week
+    + photoUrl (string) - employee photo
+    + active (number) - value true/ false
+    + validTo (string) - 
+    + primarySkill (array [number, string]) - employee primary skill from table Skills
+    + secondarySkill (array [number, string]) - employee secondary skill from table Skills
+    + preferedShifts (array  [number,string]) - employee prefered shifts from table EmployeePreferedShifts
+
 + Parameters
 
     + orgUnitID (int) - Org.unit ID in the form of integer
-
-### AssignedEmployees [GET]
 
 + Response 200 (application/json)
 
@@ -1006,11 +1060,15 @@ View detail about org.unit with id in param
 
 ## OU - OrgUnitShiftType Collection [/orgunit/orgUnitID={orgUnitID}/orgUnitShiftType]
 
+### OrgUnitShiftType Create [POST]
+
++ Attributes 
+
+    + id 
+
 + Parameters
 
     + orgUnitID (int) - Org.unit ID in the form of integer
-
-### OrgUnitShiftType Create [POST]
 
 + Request (application/json) 
 
